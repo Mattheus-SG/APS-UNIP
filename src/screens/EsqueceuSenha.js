@@ -1,0 +1,90 @@
+import React, {useState} from 'react';
+import {Text, View, StyleSheet, TouchableOpacity, KeyboardAvoidingView, TextInput} from 'react-native';
+import { CodeField, Cursor, useBlurOnFulfill, useClearByFocusCell } from 'react-native-confirmation-code-field';
+import Icon from '@expo/vector-icons/AntDesign'
+
+const CELL_COUNT = 4;
+export default function App() {
+  const [value, setValue] = useState('');
+  const ref = useBlurOnFulfill({value, cellCount: CELL_COUNT});
+  const [props, getCellOnLayoutHandler] = useClearByFocusCell({
+    value,
+    setValue,
+  });
+
+  return (
+    <>
+      <View style={styles.viewTitle}>
+        <View style={styles.viewTitleBox}>
+          <TouchableOpacity>
+            <Icon style={styles.icon} name="leftcircleo" size={38} />
+          </TouchableOpacity>
+          <Text style={styles.mainText}>ESQUECI MINHA SENHA</Text>
+        </View>
+      </View>
+      <KeyboardAvoidingView style={styles.container}>
+
+        <Text style={styles.title}>Informe e-mail cadastrado: </Text>
+        <TextInput
+            style={styles.input}
+          />
+        <TouchableOpacity style={styles.btnEnviar}>
+          <Text style={styles.btnText}>ENVIAR</Text>
+        </TouchableOpacity>
+      </KeyboardAvoidingView>
+    </>
+  );
+};
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center'
+  },
+  title: {
+    textAlign: 'center',
+    fontSize: 16,
+    color: 'grey',
+    marginBottom: 8
+  },
+  btnEnviar: {
+    width: '50%',
+    backgroundColor: '#225051',
+    padding: 20,
+    marginTop: 60,
+    borderRadius: 50,
+  },
+  btnText: {
+    color: '#fff',
+    fontWeight: 'bold',
+    fontSize: 17,
+    textAlign: 'center'
+  },
+  mainText: {
+    fontSize: 18,
+    color: '#285556',
+    fontWeight: 'bold',
+  },
+  viewTitle: {
+    marginTop: 32,
+    width: '90%',
+    alignItems: 'center'
+  },
+  viewTitleBox: {
+    flexDirection: 'row',
+    alignItems: 'center'
+  },
+  icon: {
+    color: '#225051',
+    marginRight: 20
+  },
+  input: {
+    borderColor: '#8a8a8a',
+    borderBottomWidth: 2,
+    padding: 7,
+    fontSize: 18,
+    width: '70%'
+  },
+});

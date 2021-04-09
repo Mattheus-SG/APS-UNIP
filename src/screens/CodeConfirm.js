@@ -95,7 +95,7 @@ const styles = StyleSheet.create({
   btnEnviar: {
     width: '50%',
     backgroundColor: '#225051',
-    padding: 18,
+    padding: 20,
     marginTop: 50,
     borderRadius: 50
   },
@@ -111,7 +111,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
   viewTitle: {
-    marginTop: 60,
+    marginTop: 32,
     width: '90%',
     alignItems: 'center'
   },
