@@ -1,17 +1,25 @@
-import React, {useState} from 'react';
-import {Text, View, StyleSheet, TouchableOpacity, KeyboardAvoidingView} from 'react-native';
-import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
+import React from "react";
+import { Alert, Modal, StyleSheet, Text, View } from "react-native";
 
-//Pages
+import Pop_up from './src/screens/teste_popup';
 import Login from './src/screens/Login';
-import CodeConfirm from './src/screens/CodeConfirm';
 import EsqueceuSenha from './src/screens/EsqueceuSenha';
+import CodeConfirm from './src/screens/CodeConfirm';
 
-export default function App() {
+const App = () => {
   return (
-    <Login />
+    <View style={styles.centeredView}>
+      <Pop_up />
+    </View>
   );
 };
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  centeredView: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+});
+
+export default App;

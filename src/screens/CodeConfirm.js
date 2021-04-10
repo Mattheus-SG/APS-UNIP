@@ -111,7 +111,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
   viewTitle: {
-    marginTop: 32,
+    marginTop: 42,
     width: '90%',
     alignItems: 'center'
   },
