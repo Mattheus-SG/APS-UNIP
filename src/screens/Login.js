@@ -47,8 +47,8 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#fff',
     justifyContent: 'center',
-    paddingLeft: 50,
-    paddingRight: 50,
+    padding: 50,
+    width: '100%'
 
   },
   loginText: {
