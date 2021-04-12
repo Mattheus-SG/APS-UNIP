@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import {Text, View, StyleSheet, TouchableOpacity, KeyboardAvoidingView, TextInput} from 'react-native';
 import { CodeField, Cursor, useBlurOnFulfill, useClearByFocusCell } from 'react-native-confirmation-code-field';
 import Icon from '@expo/vector-icons/AntDesign'
+import { height } from './Login';
 
 const CELL_COUNT = 4;
 export default function App() {
@@ -41,7 +42,8 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    width: '100%'
+    width: '100%',
+    height: height
   },
   title: {
     textAlign: 'center',
@@ -53,7 +55,7 @@ const styles = StyleSheet.create({
     width: '50%',
     backgroundColor: '#225051',
     padding: 20,
-    marginTop: 60,
+    marginTop: '15%',
     borderRadius: 50,
   },
   btnText: {

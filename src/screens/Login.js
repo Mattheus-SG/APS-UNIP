@@ -1,7 +1,8 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View, TouchableOpacity, TextInput, KeyboardAvoidingView } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity, TextInput, KeyboardAvoidingView, Dimensions } from 'react-native';
 
+export let height = Dimensions.get('window').height;
 export default function App() {
   return (
     <>
@@ -48,14 +49,15 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     justifyContent: 'center',
     padding: 50,
-    width: '100%'
+    width: '100%',
+    height: height
 
   },
   loginText: {
     color: '#225051',
     fontSize: 38,
     fontWeight: 'bold',
-    marginBottom: 170
+    marginBottom: '55%'
   },
   viewloginInput: {
     marginBottom: 30

@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import {Text, View, StyleSheet, TouchableOpacity, KeyboardAvoidingView} from 'react-native';
 import { CodeField, Cursor, useBlurOnFulfill, useClearByFocusCell } from 'react-native-confirmation-code-field';
 import Icon from '@expo/vector-icons/AntDesign'
+import { height } from './Login';
 
 const CELL_COUNT = 4;
 export default function App() {
@@ -62,13 +63,14 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#fff',
     alignItems: 'center',
-    width: '100%'
+    width: '100%',
+    height: height
   },
   title: {
     textAlign: 'center',
     fontSize: 16,
     color: 'grey',
-    marginTop: 220
+    marginTop: '55%'
   },
   codeFieldRoot: {
     marginTop: 20,
@@ -77,7 +79,7 @@ const styles = StyleSheet.create({
     marginRight: 'auto',
   },
   cellRoot: {
-    width: 62,
+    width: '20%',
     height: 60,
     justifyContent: 'center',
     alignItems: 'center',
@@ -97,7 +99,7 @@ const styles = StyleSheet.create({
     width: '50%',
     backgroundColor: '#225051',
     padding: 20,
-    marginTop: 50,
+    marginTop: '14%',
     borderRadius: 50
   },
   btnText: {
@@ -112,7 +114,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
   viewTitle: {
-    marginTop: 42,
+    marginTop: '10%',
     width: '90%',
     alignItems: 'center'
   },

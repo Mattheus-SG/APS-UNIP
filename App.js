@@ -9,7 +9,7 @@ import CodeConfirm from './src/screens/CodeConfirm';
 const App = () => {
   return (
     <View style={styles.centeredView}>
-      <Login />
+      <Login /> 
     </View>
   );
 };
