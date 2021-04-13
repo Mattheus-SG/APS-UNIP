@@ -15,7 +15,7 @@ export default function App() {
 
   return (
     <>
-    
+      <KeyboardAvoidingView style={styles.container}>
       <View style={styles.viewTitle}>
         <View style={styles.viewTitleBox}>
           <TouchableOpacity>
@@ -24,8 +24,6 @@ export default function App() {
           <Text style={styles.mainText}>CÓDIGO RECEBIDO</Text>
         </View>
       </View>
-      <View style={styles.container}>
-
         <Text style={styles.title}>Digite o código recebido: </Text>
         <CodeField
           ref={ref}
@@ -53,7 +51,7 @@ export default function App() {
         </TouchableOpacity>
 
         <TouchableOpacity style={styles.reenviarCode}><Text style={styles.reenviarCodeText}>Enviar o código novamente</Text></TouchableOpacity>
-      </View>
+      </KeyboardAvoidingView>
     </>
   );
 };
@@ -70,7 +68,6 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     fontSize: 16,
     color: 'grey',
-    marginTop: '55%'
   },
   codeFieldRoot: {
     marginTop: 20,
@@ -79,7 +76,7 @@ const styles = StyleSheet.create({
     marginRight: 'auto',
   },
   cellRoot: {
-    width: '20%',
+    width: '22%',
     height: 60,
     justifyContent: 'center',
     alignItems: 'center',
@@ -99,7 +96,7 @@ const styles = StyleSheet.create({
     width: '50%',
     backgroundColor: '#225051',
     padding: 20,
-    marginTop: '14%',
+    marginTop: '12%',
     borderRadius: 50
   },
   btnText: {
@@ -114,9 +111,9 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
   viewTitle: {
-    marginTop: '10%',
-    width: '90%',
-    alignItems: 'center'
+    marginTop: '12%',
+    alignItems: 'center',
+    marginBottom: '55%'
   },
   viewTitleBox: {
     flexDirection: 'row',
@@ -127,7 +124,7 @@ const styles = StyleSheet.create({
     marginRight: 20
   },
   reenviarCode: {
-    marginTop: 170
+    marginTop: '45%'
   },
   reenviarCodeText: {
     color: '#225051',

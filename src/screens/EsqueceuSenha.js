@@ -87,6 +87,6 @@ const styles = StyleSheet.create({
     borderBottomWidth: 2,
     padding: 7,
     fontSize: 18,
-    width: '70%'
+    width: '75%'
   },
 });

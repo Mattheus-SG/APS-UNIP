@@ -2,7 +2,7 @@ import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View, TouchableOpacity, TextInput, KeyboardAvoidingView, Dimensions } from 'react-native';
 
-export let height = Dimensions.get('window').height;
+export let height = Dimensions.get('window').height
 export default function App() {
   return (
     <>
@@ -10,12 +10,12 @@ export default function App() {
         <View style={styles.viewLoginText}>
           <Text style={styles.loginText}>LOGIN</Text>
         </View>
-
-
+        
         <View style={styles.viewloginInput}>
           <Text style={styles.textInput}>Email:</Text>
           <TextInput
             style={styles.input}
+            name='email'
           />
 
           <Text style={styles.textInput2}>Senha: </Text>
@@ -48,10 +48,9 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#fff',
     justifyContent: 'center',
-    padding: 50,
-    width: '100%',
+    padding: 0,
+    width: '80%',
     height: height
-
   },
   loginText: {
     color: '#225051',
@@ -75,11 +74,12 @@ const styles = StyleSheet.create({
     borderColor: '#8a8a8a',
     borderBottomWidth: 2,
     padding: 7,
-    fontSize: 18
+    fontSize: 18,
+    width: '100%'
   },
   btns: {
     alignItems: 'center',
-    marginTop: 70
+    marginTop: '15%'
   },
   btnSubmit: {
     backgroundColor: '#225051',
