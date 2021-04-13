@@ -4,15 +4,7 @@ import { CodeField, Cursor, useBlurOnFulfill, useClearByFocusCell } from 'react-
 import Icon from '@expo/vector-icons/AntDesign'
 import { height } from './Login';
 
-const CELL_COUNT = 4;
 export default function App() {
-  const [value, setValue] = useState('');
-  const ref = useBlurOnFulfill({value, cellCount: CELL_COUNT});
-  const [props, getCellOnLayoutHandler] = useClearByFocusCell({
-    value,
-    setValue,
-  });
-
   return (
     <>
       <View style={styles.viewTitle}>
