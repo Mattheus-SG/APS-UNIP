@@ -5,11 +5,12 @@ import Pop_up from './src/screens/teste_popup';
 import Login from './src/screens/Login';
 import EsqueceuSenha from './src/screens/EsqueceuSenha';
 import CodeConfirm from './src/screens/CodeConfirm';
+import Teste from './src/screens/Login2';
 
 const App = () => {
   return (
     <View style={styles.centeredView}>
-      <Login />
+      <Pop_up />
     </View>
   );
 };

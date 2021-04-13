@@ -3,6 +3,7 @@ import React from 'react';
 import { StyleSheet, Text, View, TouchableOpacity, TextInput, KeyboardAvoidingView, Dimensions } from 'react-native';
 
 export let height = Dimensions.get('window').height
+export let width = Dimensions.get('window').width
 export default function App() {
   return (
     <>
@@ -48,15 +49,14 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#fff',
     justifyContent: 'center',
-    padding: 0,
     width: '80%',
-    height: height
+    maxHeight: height
   },
   loginText: {
     color: '#225051',
     fontSize: 38,
     fontWeight: 'bold',
-    marginBottom: '55%'
+    marginBottom: '60%'
   },
   viewloginInput: {
     marginBottom: 30
@@ -79,7 +79,7 @@ const styles = StyleSheet.create({
   },
   btns: {
     alignItems: 'center',
-    marginTop: '15%'
+    marginTop: '12%'
   },
   btnSubmit: {
     backgroundColor: '#225051',
@@ -87,7 +87,7 @@ const styles = StyleSheet.create({
     padding: 20,
     borderRadius: 50,
     marginTop: 10,
-    marginBottom: 55
+    marginBottom: 50
   },
   submitText: {
     color: '#fff',

@@ -70,7 +70,7 @@ const styles = StyleSheet.create({
     color: 'grey',
   },
   codeFieldRoot: {
-    marginTop: 20,
+    marginTop: 18,
     width: 280,
     marginLeft: 'auto',
     marginRight: 'auto',
@@ -111,13 +111,13 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
   viewTitle: {
-    marginTop: '12%',
+    marginTop: '10%',
     alignItems: 'center',
-    marginBottom: '55%'
+    marginBottom: '54%'
   },
   viewTitleBox: {
     flexDirection: 'row',
-    alignItems: 'center'
+    alignItems: 'center',
   },
   icon: {
     color: '#225051',
