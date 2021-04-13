@@ -16,7 +16,7 @@ export default function App() {
       </View>
       <KeyboardAvoidingView style={styles.container}>
 
-        <Text style={styles.title}>Informe e-mail cadastrado: </Text>
+        <Text style={styles.title}>Informe e-mail cadastrado:  </Text>
         <TextInput
             style={styles.input}
           />
