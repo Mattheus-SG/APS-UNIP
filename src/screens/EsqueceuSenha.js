@@ -49,7 +49,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     fontSize: 16,
     color: 'grey',
-    marginBottom: 8
+    marginBottom: 10
   },
   btnEnviar: {
     width: '50%',
@@ -85,7 +85,7 @@ const styles = StyleSheet.create({
   input: {
     borderColor: '#8a8a8a',
     borderBottomWidth: 2,
-    padding: 7,
+    padding: 8,
     fontSize: 18,
     width: '75%'
   },
