@@ -1,22 +1,23 @@
 import React from "react";
+import { StatusBar } from 'expo-status-bar';
 import { Alert, Modal, StyleSheet, Text, View } from "react-native";
 
-import Pop_up from './src/screens/teste_popup';
+import Pop_up from './src/screens/Alerts/teste_popup';
 import Login from './src/screens/Login';
 import EsqueceuSenha from './src/screens/EsqueceuSenha';
 import CodeConfirm from './src/screens/CodeConfirm';
-import Teste from './src/screens/Login2';
+import Login2 from './src/screens/Login_2';
 
 const App = () => {
   return (
-    <View style={styles.centeredView}>
-      <Pop_up />
+    <View style={styles.container}>
+      <Login2 />
     </View>
   );
 };
 
 const styles = StyleSheet.create({
-  centeredView: {
+  container: {
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
