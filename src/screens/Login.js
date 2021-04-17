@@ -1,32 +1,27 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View, TouchableOpacity, TextInput, KeyboardAvoidingView, Dimensions } from 'react-native';
+import React from "react";
+import { StyleSheet, Text, View, TouchableOpacity, KeyboardAvoidingView } from "react-native";
+import { TextInput } from "react-native-gesture-handler";
 
-export let height = Dimensions.get('window').height
-export let width = Dimensions.get('window').width
-export default function App() {
+const App = () => {
   return (
-    <>
-      <KeyboardAvoidingView style={styles.container}>
-        <View style={styles.viewLoginText}>
-          <Text style={styles.loginText}>LOGIN</Text>
+    <KeyboardAvoidingView style={styles.container}>
+        <View style={styles.view1}>
+            <Text style={styles.title}>LOGIN</Text>
         </View>
-        
-        <View style={styles.viewloginInput}>
-          <Text style={styles.textInput}>Email:</Text>
-          <TextInput
+        <View style={styles.view2}>
+            <Text style={styles.textInput}>Email: </Text>
+            <TextInput  
             style={styles.input}
-            name='email'
-          />
-
-          <Text style={styles.textInput2}>Senha: </Text>
-          <TextInput
+            placeholder=""
+            />
+            <Text style={styles.textInput}>Senha: </Text>
+            <TextInput  
             style={styles.input}
+            placeholder=""
             secureTextEntry={true}
-          />
+            />
         </View>
-
-        <View style={styles.btns}>
+        <View style={styles.view3}>
           <TouchableOpacity style={styles.btnSubmit}>
             <Text style={styles.submitText}>ENTRAR</Text>
           </TouchableOpacity>
@@ -39,78 +34,87 @@ export default function App() {
             <Text style={styles.btnEsqueciSehna}>Esqueci minha senha</Text>
           </TouchableOpacity>
         </View>
-      </KeyboardAvoidingView>
-    </>
+    </KeyboardAvoidingView>
   );
-}
+};
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    justifyContent: 'center',
-    width: '80%',
-    maxHeight: height
+    justifyContent: "center",
+    alignItems: "center",
+    width: '100%',
+    padding: 40,
   },
-  loginText: {
-    color: '#225051',
+    title: {
+    color: '#fff',
+    fontStyle: 'italic',
     fontSize: 38,
-    fontWeight: 'bold',
-    marginBottom: '60%'
+    fontWeight: "bold",
+    color: '#225051'
   },
-  viewloginInput: {
-    marginBottom: 30
+  view1: {
+    flex: 1/2,
+    width: '100%',
+    marginBottom: 28
+  },
+  view2: {
+    flex: 1,
+    width: '100%',
+    justifyContent: "center",
+    marginBottom: '2%'
+  },
+  view3: {
+    flex: 1,
+    width: '100%',
+    alignItems: "center",
   },
   textInput: {
-    fontSize: 16,
-    color: '#969696'
-  },
-  textInput2: {
-    fontSize: 16,
+    fontSize: 17,
     color: '#969696',
-    marginTop: 30
   },
   input: {
-    borderColor: '#8a8a8a',
+    fontSize: 16,
+    padding: 8,
     borderBottomWidth: 2,
-    padding: 7,
+    borderBottomColor: '#8a8a8a',
     fontSize: 18,
-    width: '100%'
-  },
-  btns: {
-    alignItems: 'center',
-    marginTop: '12%'
+    marginBottom: 17
   },
   btnSubmit: {
+    width: '67%',
     backgroundColor: '#225051',
-    width: '62%',
     padding: 20,
     borderRadius: 50,
-    marginTop: 10,
-    marginBottom: 50
+    alignItems: "center",
+    justifyContent: "center",
+    marginTop: 12
   },
   submitText: {
     color: '#fff',
-    textAlign: 'center',
-    fontSize: 16,
-    fontWeight: 'bold',
+    fontWeight: "bold",
+    fontSize: 18
   },
   btnCadastro: {
-    width: '90%',
     borderWidth: 2,
-    padding: 14,
+    borderColor: '#225051',
     borderRadius: 50,
-    borderColor: '#225051'
+    padding: 16,
+    width: '90%',
+    alignItems: "center",
+    marginTop: 30,
   },
   cadastroText: {
-    textAlign: 'center',
-    color: '#225051',
-    fontSize: 16
-  },
-  btnEsqueciSehna: {
-    marginTop: 18,
     color: '#225051',
     fontSize: 15
+  },
+  btnEsqueciSehna: {
+    color: '#225051',
+    fontSize: 15,
+    marginTop: 16
   }
+
 });
+
+export default App;
 

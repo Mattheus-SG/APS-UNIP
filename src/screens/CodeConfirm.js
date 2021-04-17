@@ -1,8 +1,7 @@
 import React, {useState} from 'react';
-import {Text, View, StyleSheet, TouchableOpacity, KeyboardAvoidingView} from 'react-native';
+import {Text, View, StyleSheet, TouchableOpacity} from 'react-native';
 import { CodeField, Cursor, useBlurOnFulfill, useClearByFocusCell } from 'react-native-confirmation-code-field';
 import Icon from '@expo/vector-icons/AntDesign'
-import { height } from './Login';
 
 const CELL_COUNT = 4;
 export default function App() {
@@ -14,45 +13,51 @@ export default function App() {
   });
 
   return (
-    <>
-      <KeyboardAvoidingView style={styles.container}>
-      <View style={styles.viewTitle}>
-        <View style={styles.viewTitleBox}>
-          <TouchableOpacity>
-            <Icon style={styles.icon} name="leftcircleo" size={38} />
-          </TouchableOpacity>
-          <Text style={styles.mainText}>CÓDIGO RECEBIDO</Text>
+    <View style={styles.container}>
+        <View style={styles.view1}>
+            <TouchableOpacity>
+                <Icon style={styles.icon} name="leftcircleo" size={38} />
+            </TouchableOpacity>
+            <Text style={styles.title}>CÓDIGO RECEBIDO</Text>
         </View>
-      </View>
-        <Text style={styles.title}>Digite o código recebido: </Text>
-        <CodeField
-          ref={ref}
-          {...props}
-          value={value}
-          onChangeText={setValue}
-          cellCount={CELL_COUNT}
-          rootStyle={styles.codeFieldRoot}
-          keyboardType="number-pad"
-          textContentType="oneTimeCode"
-          renderCell={({index, symbol, isFocused}) => (
-            <View
-              onLayout={getCellOnLayoutHandler(index)}
-              key={index}
-              style={[styles.cellRoot, isFocused && styles.focusCell]}>
-              <Text style={styles.cellText}>
-                {symbol || (isFocused ? <Cursor /> : null)}
-              </Text>
-          </View>
-        )}
-        />
 
-        <TouchableOpacity style={styles.btnEnviar}>
-          <Text style={styles.btnText}>ENVIAR</Text>
-        </TouchableOpacity>
+        <View style={styles.view2}>
+            <Text style={styles.textInput}>Digite o código recebido: </Text>
+            <CodeField
+            ref={ref}
+            {...props}
+            value={value}
+            onChangeText={setValue}
+            cellCount={CELL_COUNT}
+            rootStyle={styles.codeFieldRoot}
+            keyboardType="number-pad"
+            textContentType="oneTimeCode"
+            renderCell={({index, symbol, isFocused}) => (
+                <View
+                onLayout={getCellOnLayoutHandler(index)}
+                key={index}
+                style={[styles.cellRoot, isFocused && styles.focusCell]}>
+                <Text style={styles.cellText}>
+                    {symbol || (isFocused ? <Cursor /> : null)}
+                </Text>
+                </View>
+            )}
+            />
+        </View>
 
-        <TouchableOpacity style={styles.reenviarCode}><Text style={styles.reenviarCodeText}>Enviar o código novamente</Text></TouchableOpacity>
-      </KeyboardAvoidingView>
-    </>
+        <View style={styles.view3}>
+            <TouchableOpacity style={styles.button}>
+                <Text style={styles.textButton}>Enviar</Text>
+            </TouchableOpacity>
+
+        </View>
+        <View style={styles.view4}>
+            <TouchableOpacity style={styles.resend}>
+                <Text style={styles.resendText}>Enviar o código novamente</Text>
+            </TouchableOpacity>
+        </View>
+
+    </View>
   );
 };
 
@@ -62,9 +67,9 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     width: '100%',
-    height: height
+    marginTop: '10%'
   },
-  title: {
+  textInput: {
     textAlign: 'center',
     fontSize: 16,
     color: 'grey',
@@ -76,58 +81,78 @@ const styles = StyleSheet.create({
     marginRight: 'auto',
   },
   cellRoot: {
-    width: '22%',
+    width: '21%',
     height: 60,
     justifyContent: 'center',
     alignItems: 'center',
     borderBottomColor: '#ccc',
-    borderBottomWidth: 1,
+    borderBottomWidth: 2,
+    marginBottom: '5%'
   },
   cellText: {
     color: '#000',
-    fontSize: 36,
+    fontSize: 38,
     textAlign: 'center',
   },
   focusCell: {
     borderBottomColor: '#225051',
     borderBottomWidth: 2,
   },
-  btnEnviar: {
-    width: '50%',
-    backgroundColor: '#225051',
-    padding: 20,
-    marginTop: '12%',
-    borderRadius: 50
-  },
-  btnText: {
-    color: '#fff',
-    fontWeight: 'bold',
-    fontSize: 17,
-    textAlign: 'center'
-  },
-  mainText: {
-    fontSize: 18,
-    color: '#285556',
-    fontWeight: 'bold',
-  },
-  viewTitle: {
-    marginTop: '10%',
-    alignItems: 'center',
-    marginBottom: '54%'
-  },
-  viewTitleBox: {
-    flexDirection: 'row',
-    alignItems: 'center',
+  view1: {
+      flex: 1/4,
+      width: '100%',
+      flexDirection: 'row',
+      width: '80%',
   },
   icon: {
     color: '#225051',
-    marginRight: 20
   },
-  reenviarCode: {
-    marginTop: '45%'
-  },
-  reenviarCodeText: {
+  title: {
     color: '#225051',
-    fontSize: 15,
+    fontSize: 20,
+    fontWeight: 'bold',
+    marginLeft: '10%'
+  },
+  view2: {
+      flex: 2/3,
+      width: '100%',
+      justifyContent: 'center',
+      marginTop: '12%',
+  },
+  textInput: {
+    fontSize: 17,
+    color: '#969696',
+    alignSelf: 'center',
+    marginTop: '15%'
+  },
+  view3: {
+      flex: 1/2,
+      width: '100%',
+      alignItems: 'center',
+  },
+  button: {
+      width: '54%',
+      alignItems: 'center',
+      padding: 17,
+      backgroundColor: '#225051',
+      borderRadius: 50,
+      marginBottom: '10%'
+  },
+  textButton: {
+      color: '#fff',
+      fontSize: 22,
+      fontWeight: 'bold'
+  },
+  view4: {
+    flex: 1/6,
+    width: '100%'
+  },
+  resend: {
+      alignItems: 'center',
+      width: '100%',
+  },
+  resendText: {
+    color: '#225051',
+    fontSize: 16,
   }
 });

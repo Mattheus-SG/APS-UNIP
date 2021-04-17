@@ -1,14 +1,22 @@
 import React from "react";
-import { SafeAreaView, StyleSheet, Text, View, TouchableOpacity, KeyboardAvoidingView } from "react-native";
+import { StatusBar } from 'expo-status-bar';
+import { StyleSheet, Text, View, TouchableOpacity, KeyboardAvoidingView, Image } from "react-native";
 import { TextInput } from "react-native-gesture-handler";
 
 const App = () => {
   return (
     <KeyboardAvoidingView style={styles.container}>
-        <View style={styles.view1}>
-            <Text style={styles.title}>LOGIN</Text>
-        </View>
+        <StatusBar
+        animated={true}
+        backgroundColor="#215051"
+        />
         <View style={styles.view2}>
+        <Image
+          style={styles.logo}
+          source={require('../images/logo2.png')}
+          />
+          <Text style={styles.title}>Flood</Text>
+          <View style={styles.inputs}>
             <Text style={styles.textInput}>Email: </Text>
             <TextInput  
             style={styles.input}
@@ -20,19 +28,18 @@ const App = () => {
             placeholder=""
             secureTextEntry={true}
             />
-        </View>
-        <View style={styles.view3}>
-          <TouchableOpacity style={styles.btnSubmit}>
-            <Text style={styles.submitText}>ENTRAR</Text>
-          </TouchableOpacity>
+            </View>
+            <TouchableOpacity style={styles.btnSubmit}>
+              <Text style={styles.submitText}>ENTRAR</Text>
+            </TouchableOpacity>
 
-          <TouchableOpacity style={styles.btnCadastro}>
-            <Text style={styles.cadastroText}>Não possui cadastro?</Text>
-          </TouchableOpacity>
+            <TouchableOpacity style={styles.btnCadastro}>
+              <Text style={styles.cadastroText}>Não possui cadastro?</Text>
+            </TouchableOpacity>
 
-          <TouchableOpacity>
-            <Text style={styles.btnEsqueciSehna}>Esqueci minha senha</Text>
-          </TouchableOpacity>
+            <TouchableOpacity>
+              <Text style={styles.btnEsqueciSehna}>Esqueci minha senha</Text>
+            </TouchableOpacity>
         </View>
     </KeyboardAvoidingView>
   );
@@ -44,24 +51,36 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     width: '100%',
-    padding: 45,
+    padding: 42,
   },
     title: {
-      color: '#fff',
-      fontStyle: 'italic',
-      fontSize: 38,
-      fontWeight: "bold",
-      color: '#225051'
+    color: '#fff',
+    fontStyle: 'italic',
+    fontSize: 36,
+    fontWeight: "bold",
+    color: '#225051',
+    marginBottom: '10%'
   },
   view1: {
-    flex: 1/2,
+    flex: 1,
     width: '100%',
+    justifyContent: 'center',
+    alignItems: "center"
+  },
+  logo: {
+    width: '48%',
+    height: '25%',
+    padding: 0,
   },
   view2: {
     flex: 1,
     width: '100%',
     justifyContent: "center",
+    alignItems: 'center'
+  },
 
+  inputs: {
+    width: '100%'
   },
   view3: {
     flex: 1,
@@ -69,16 +88,16 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   textInput: {
-      fontSize: 17,
-      color: '#969696',
+    fontSize: 17,
+    color: '#969696',
   },
   input: {
-      fontSize: 16,
-      padding: 10,
-      borderBottomWidth: 2,
-      borderBottomColor: '#8a8a8a',
-      fontSize: 18,
-      marginBottom: 14
+    fontSize: 16,
+    padding: 8,
+    borderBottomWidth: 2,
+    borderBottomColor: '#8a8a8a',
+    fontSize: 18,
+    marginBottom: 17
   },
   btnSubmit: {
     width: '67%',
@@ -87,7 +106,7 @@ const styles = StyleSheet.create({
     borderRadius: 50,
     alignItems: "center",
     justifyContent: "center",
-    marginTop: 20,
+    marginTop: '10%'
   },
   submitText: {
     color: '#fff',
@@ -101,7 +120,7 @@ const styles = StyleSheet.create({
     padding: 16,
     width: '90%',
     alignItems: "center",
-    marginTop: 50,
+    marginTop: 30,
   },
   cadastroText: {
     color: '#225051',
@@ -116,3 +135,4 @@ const styles = StyleSheet.create({
 });
 
 export default App;
+
