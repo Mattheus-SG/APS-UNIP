@@ -6,6 +6,8 @@ import Login from './src/screens/Login';
 import Login2 from './src/screens/LoginWithLogo';
 import EsqueceuSenha from './src/screens/EsqueceuSenha';
 import CodeConfirm from './src/screens/CodeConfirm';
+import Cadastro from './src/screens/Cadastro';
+
 
 const App = () => {
   return (
